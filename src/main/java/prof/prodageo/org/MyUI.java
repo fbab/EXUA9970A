@@ -13,6 +13,10 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
  * (or tab) or some part of a html page where a Vaadin application is embedded.
@@ -26,6 +30,8 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+        private static final Logger log = LoggerFactory.getLogger(MyUIServlet.class);
+        
         final VerticalLayout layout = new VerticalLayout();
         
         final TextField name = new TextField();
@@ -35,6 +41,7 @@ public class MyUI extends UI {
         button.addClickListener( e -> {
             layout.addComponent(new Label("Thanks " + name.getValue() 
                     + ", it works!"));
+            log.info("Button clicked again !");
         });
         
         layout.addComponents(name, button);
