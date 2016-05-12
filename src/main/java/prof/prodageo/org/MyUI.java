@@ -28,9 +28,11 @@ import org.slf4j.LoggerFactory;
 @Widgetset("prof.prodageo.org.MyAppWidgetset")
 public class MyUI extends UI {
 
+        private static final Logger log = LoggerFactory.getLogger(MyUIServlet.class);
+
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        private static final Logger log = LoggerFactory.getLogger(MyUIServlet.class);
+
         
         final VerticalLayout layout = new VerticalLayout();
         
